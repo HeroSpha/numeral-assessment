@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "PrOWovgQfzk8zPdBPvG0rT5pHStr4yIjkh3u+94tp8Hd7PmlxuXuVhIRIyuCnXsa4Yi7BttTJNqMnA7r41tWwQ==",
+  "success": true,
+  "projectFilePath": "D:\\Numeral\\aspcore\\src\\Numeral.CoffeeShop.Domain\\Numeral.CoffeeShop.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\appsu\\.nuget\\packages\\erroror\\1.2.1\\erroror.1.2.1.nupkg.sha512"
+  ],
+  "logs": []
+}

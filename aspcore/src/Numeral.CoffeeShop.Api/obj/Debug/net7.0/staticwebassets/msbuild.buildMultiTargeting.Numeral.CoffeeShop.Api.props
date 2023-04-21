@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Numeral.CoffeeShop.Api.props" />
+</Project>

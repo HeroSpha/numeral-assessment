@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Abstrations\" />
+    <Folder Include="Authentication\Commands\" />
+    <Folder Include="Common\Errors\" />
+    <Folder Include="Customers\Commands\" />
+    <Folder Include="Exceptions\Base\" />
+    <Folder Include="MenuItems\Common\" />
+    <Folder Include="MenuItems\Queries\Get\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.5.2" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="MediatR" Version="12.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Numeral.CoffeeShop.Domain\Numeral.CoffeeShop.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
