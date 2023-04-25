@@ -32,6 +32,7 @@ public class Order : AggregateRoot<OrderId, Guid>
         OrderDate = orderDate;
         CustomerId = customerId;
         Status = orderStatus;
+        _orderItems = new List<OrderItem>(items);
     }
 
     private void CheckOrderItems(IEnumerable<OrderItem> orderItems)

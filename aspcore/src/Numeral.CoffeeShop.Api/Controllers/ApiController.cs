@@ -1,4 +1,6 @@
-﻿using ErrorOr;
+﻿using System.Security.Claims;
+
+using ErrorOr;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -8,6 +10,16 @@ namespace Numeral.CoffeeShop.Api.Controllers;
 [Authorize]
 public class ApiController : ControllerBase
 {
+    
+
+    protected (string role, string? userId) GetUser()
+    {
+        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        var roleClaim = User.FindFirst(ClaimTypes.Role);
+        var role = roleClaim != null ? roleClaim.Value : "Customer";
+        return (role, userId);
+    }
+    
     protected IActionResult Problem(List<Error> errors)
     {
         if (errors.Count is 0)

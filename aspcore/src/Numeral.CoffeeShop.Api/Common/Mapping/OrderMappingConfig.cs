@@ -13,5 +13,6 @@ public class OrderMappingConfig : IRegister
     {
         config.NewConfig<CreateOrderRequest, CreateOrderCommand>();
         config.NewConfig<Order, OrderResponse>();
+        config.NewConfig<CreateOrderRequest, OrderItemDto>();
     }
 }

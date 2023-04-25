@@ -9,16 +9,16 @@ public class OrderItem : Entity<OrderItemId>
 {
     public int Quantity { get; private set; }
     public decimal Price { get; private set; }
-    private OrderItem(OrderItemId id, int quantity, decimal price, MenuItemId menuItemId) : base(id)
+    private OrderItem(OrderItemId id, int quantity, decimal price) : base(id)
     {
         Quantity = quantity;
         Price = price;
     }
 
     public static OrderItem Create(
-        int quantity, decimal price, MenuItemId menuItemId)
+        int quantity, decimal price)
     {
-        return new(OrderItemId.CreateUnique(), quantity, price, menuItemId);
+        return new(OrderItemId.CreateUnique(), quantity, price);
     }
 
 #pragma warning disable CS8618

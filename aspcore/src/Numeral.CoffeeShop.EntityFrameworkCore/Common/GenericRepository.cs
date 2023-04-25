@@ -75,5 +75,6 @@ public class GenericRepository<TEntity> : IRepository<TEntity>  where TEntity : 
     {
         DbSet.Attach(entityToUpdate);
         _context.Entry(entityToUpdate).State = EntityState.Modified;
+        await _context.SaveChangesAsync();
     }
 }

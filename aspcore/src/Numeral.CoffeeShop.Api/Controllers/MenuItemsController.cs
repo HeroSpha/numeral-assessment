@@ -36,6 +36,7 @@ public class MenuItemsController : ApiController
     }
 
     [HttpGet]
+    [AllowAnonymous]
     public async Task<IActionResult> ListMenuItems()
     {
         var query = new GetMenuItemsQuery();

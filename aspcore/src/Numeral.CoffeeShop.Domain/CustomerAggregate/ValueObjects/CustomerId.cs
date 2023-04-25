@@ -22,7 +22,7 @@ public sealed class CustomerId : AggregateRootId<Guid>
 
     public static CustomerId Create(Guid value)
     {
-        return new CustomerId(value);
+        return new (value);
     }
     public static CustomerId Create(string value)
     {

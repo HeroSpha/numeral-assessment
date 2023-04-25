@@ -6,4 +6,4 @@ using Numeral.CoffeeShop.Domain.OrderAggregate;
 
 namespace Numeral.CoffeeShop.Application.Orders.Queries.list;
 
-public record GetOrderListQuery() : IRequest<IEnumerable<Order>>;
+public record GetOrderListQuery(string CustomerId) : IRequest<IEnumerable<Order>>;

@@ -9,6 +9,7 @@ namespace Numeral.CoffeeShop.Domain.CustomerAggregate;
 public sealed class Customer : AggregateRoot<CustomerId, Guid>
 {
     public double Points { get; private set; }
+    public decimal Cash { get; private set; }
     private readonly List<Reward> _rewards;
     public IReadOnlyList<Reward> Rewards => _rewards.AsReadOnly();
     public string FirstName { get; private set; }
@@ -20,6 +21,7 @@ public sealed class Customer : AggregateRoot<CustomerId, Guid>
         LastName = lastName;
         Email = email;
         _rewards = new List<Reward>();
+        Cash = 0;
         CalculatePoints();
     }
 
@@ -44,4 +46,13 @@ public sealed class Customer : AggregateRoot<CustomerId, Guid>
 #pragma warning restore CS8618
 
 
+    public void RedeemPoints()
+    {
+        foreach (var reward in _rewards.Where(x => x.CustomerRewardEnum == CustomerRewardEnum.Earned))
+        {
+            Cash += reward.CashValue;
+            reward.Redeem();
+        }
+        Points = 0;
+    }
 }

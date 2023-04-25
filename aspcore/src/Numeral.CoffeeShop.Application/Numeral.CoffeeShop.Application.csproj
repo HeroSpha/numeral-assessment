@@ -9,8 +9,6 @@
   <ItemGroup>
     <Folder Include="Abstrations\" />
     <Folder Include="Authentication\Commands\" />
-    <Folder Include="Common\Errors\" />
-    <Folder Include="Customers\Commands\" />
     <Folder Include="Exceptions\Base\" />
     <Folder Include="MenuItems\Common\" />
     <Folder Include="MenuItems\Queries\Get\" />

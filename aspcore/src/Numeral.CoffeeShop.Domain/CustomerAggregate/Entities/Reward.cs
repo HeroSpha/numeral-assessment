@@ -8,21 +8,27 @@ public sealed class Reward : Entity<RewardId>
 {
     public CustomerRewardEnum CustomerRewardEnum { get; private set; }
     public string ProgramName { get; private set; }
-    public decimal CashValue { get; set; }
-    public double Points { get; set; }
+    public decimal CashValue { get; private set; }
+    public double Points { get; private set; }
+
     private Reward(
-        RewardId id, 
-        string programName, 
-        CustomerRewardEnum customerRewardEnum, 
+        RewardId id,
+        string programName,
+        CustomerRewardEnum customerRewardEnum,
         decimal cashValue,
         double points) : base(id)
     {
         ProgramName = programName;
         CustomerRewardEnum = customerRewardEnum;
-        CashValue = CashValue;
+        CashValue = cashValue;
         Points = points;
     }
-    
+
+    internal void Redeem()
+    {
+        CustomerRewardEnum = CustomerRewardEnum.Redeemed;
+    }
+
 #pragma warning disable CS8618
     private Reward() {}
 #pragma warning restore CS8618

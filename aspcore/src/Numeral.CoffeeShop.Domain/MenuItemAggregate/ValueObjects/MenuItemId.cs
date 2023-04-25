@@ -22,6 +22,10 @@ public sealed class MenuItemId : AggregateRootId<Guid>
     {
         return new(value);
     }
+    public static MenuItemId Create(string value)
+    {
+        return !Guid.TryParse(value, out Guid objGuid) ? new(objGuid) : new MenuItemId(objGuid);
+    }
 
     private MenuItemId()
     {

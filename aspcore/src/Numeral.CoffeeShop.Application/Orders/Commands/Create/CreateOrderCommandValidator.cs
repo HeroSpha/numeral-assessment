@@ -6,7 +6,7 @@ public class CreateOrderCommandValidator : AbstractValidator<CreateOrderCommand>
 {
     public CreateOrderCommandValidator()
     {
-        RuleFor(x => x.OrderItems.Count())
+        RuleFor(x => x.MenuItems.Count())
             .GreaterThan(0);
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Numeral.CoffeeShop.Api.Contracts.Orders;
 
 public record OrderItemRequest(
-    decimal Price,
+    string MenuItemId,
     int Quantity
 );
